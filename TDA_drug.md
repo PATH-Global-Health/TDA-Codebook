@@ -1,25 +1,30 @@
-# Codebook
+# Codebook for Targeted Drug Administration
 
 ### start_time
+
 - **Label**: nan
 - **Type**: start
 
 ### deviceid
+
 - **Label**: nan
 - **Type**: deviceid
 
 ### today
+
 - **Label**: nan
 - **Type**: today
 
 ### end_time
+
 - **Label**: nan
 - **Type**: end
 
 ### into
+
 - **Label**: Malaria HRP Study in Ethiopia – Second phase
-Targeted drug administration in migrant workers
-Drug administration questionnaire
+  Targeted drug administration in migrant workers
+  Drug administration questionnaire
 - **Type**: note
 
 <details>
@@ -28,24 +33,29 @@ Drug administration questionnaire
 - **Type**: begin group
 
 ### interviewer_scanned_qr_code
+
 - **Label**: 1.1. Interviewer ID
 - **Type**: barcode
 
 ### interviewer_manual_qr_code
+
 - **Label**: 1.2. Enter manually if scanning not possible:
 - **Type**: text
 - **Relevant**: interviewer_scanned_qr_code = null
 
 ### interviewer_qr_code
+
 - **Label**: nan
 - **Type**: calculate
 - **Calculate**: if(interviewer_scanned_qr_code=null, interviewer_manual_qr_code, interviewer_scanned_qr_code)
 
 ### date
+
 - **Label**: 1.3. Date
 - **Type**: date
 
 ### study_arm
+
 - **Label**: 1.4. Study arm
 - **Type**: select_one study_arm
 - **Choices**:
@@ -53,6 +63,7 @@ Drug administration questionnaire
   - 2: Intervention 2: 3 rounds TDA
 
 ### farm_camp_code
+
 - **Label**: 1.5. Name of farm camp
 - **Type**: select_one farm_camp
 - **Choices**:
@@ -79,7 +90,7 @@ Drug administration questionnaire
   - 21: Ayelign Habtie (Block 26) - (Fikiremichael Ayelign)
   - 22000: Ayelign Habtie (Block29) - (Ayelign Habtie)
   - 23000: Ayelign Yenehun - (Ayelign Yenehun)
-  - 24: Ayenachew Sisay - (Adane  Ayalew)
+  - 24: Ayenachew Sisay - (Adane Ayalew)
   - 25: Ayenew Bazezew - (Habetamu Gidey)
   - 26: Ayineshet Worku - (Eyayaw Getawn)
   - 27000: Bata Trading
@@ -109,7 +120,7 @@ Drug administration questionnaire
   - 51000: Gebremedhin Tesfaye - (Yerega)
   - 52: Geger Agri. Develop. - (Melkamu kasegen)
   - 53: Getachew Tezera - (Negash Zenaw)
-  - 54: Getiye Gebru - (Mesfin Abeje  Atanaw)
+  - 54: Getiye Gebru - (Mesfin Abeje Atanaw)
   - 55: Guadie Alem - (Moges Guadie)
   - 56000: Habtamu Get - (Habtamu)
   - 57000: Habtamu Woretaw - (Habtamu)
@@ -128,7 +139,7 @@ Drug administration questionnaire
   - 69: Mastewal Mazengia (Hectares 37.5) - (Kiflie Mazengia)
   - 68000: Mastewal Mazengia (Hectares51) - (Mastewal Mazengia)
   - 72: Mekonnen Goshe - (Mandie Teketayi)
-  - 73: Mekuanint Kassie - (Dejen  Worku)
+  - 73: Mekuanint Kassie - (Dejen Worku)
   - 74: Melaku Dires - (Nigus. Dejen)
   - 75000: Melikie and Enana
   - 76: Melkie Taddesse - (Ayanaw Alebel)
@@ -162,6 +173,7 @@ Drug administration questionnaire
   - 58000: Zenaw Wagaw - (Zenaw Wagaw)
 
 ### gender
+
 - **Label**: 1.6. Participant gender
 - **Type**: select_one gender
 - **Choices**:
@@ -169,15 +181,18 @@ Drug administration questionnaire
   - 2: Female
 
 ### age
+
 - **Label**: 1.7. Participant age
 - **Type**: integer
 
 ### s1_n1
+
 - **Label**: This participant is not eligible for TDA.
 - **Type**: note
 - **Relevant**: age<14
 
 ### round_of_tda
+
 - **Label**: 1.8. Round of TDA
 - **Type**: select_one tda_round
 - **Relevant**: age>=14
@@ -187,25 +202,28 @@ Drug administration questionnaire
   - 3: Third
 
 ### filter_1_9
+
 - **Label**: nan
 - **Type**: calculate
 - **Calculate**: if(round_of_tda=2,1,2)
 
 ### received_other_tda_rounds
+
 - **Label**: 1.9. Has the participant already received other rounds of TDA?
 - **Type**: select_one received_other_tda_rounds
 - **Relevant**: age>=14 and (round_of_tda=2 or round_of_tda=3)
 - **Choices**:
   - 0: No, participant hasn’t received other rounds of TDA before this one
-  - 1: Yes, participant has received 1 round before this one 
-  - 2: Yes, participant has received 2 rounds before this one 
+  - 1: Yes, participant has received 1 round before this one
+  - 2: Yes, participant has received 2 rounds before this one
 
 ### has_study_id
+
 - **Label**: 1.10. Does this participant already have a Study ID?
 - **Type**: select_one has_study_id
 - **Relevant**: received_other_tda_rounds=1 or received_other_tda_rounds=2
 - **Choices**:
-  - 0: No 
+  - 0: No
   - 1: Yes
   - 2: Yes, but he/she lost it
 
@@ -216,16 +234,19 @@ Drug administration questionnaire
 - **Relevant**: has_study_id=0 or has_study_id=2
 
 ### s1_n2
+
 - **Label**: Check the TDA participant list from the previous visit and try to retrieve the Study ID that was previously assigned.
 - **Type**: note
 
 ### search_study_id
+
 - **Label**: Search Study ID
 - **Type**: text
 
 </details>
 
 ### find_study_id
+
 - **Label**: 1.11. Have you been able to find the participant in the previous participant list and retrieve the Study ID that was previously assigned?
 - **Type**: select_one yes_no
 - **Relevant**: has_study_id=0 or has_study_id=2
@@ -234,32 +255,38 @@ Drug administration questionnaire
   - 0: No
 
 ### s1_n3
+
 - **Label**: Assign a new Study ID, fill out the enrolment registry, provide participant ID card and obtain informed consent.
 - **Type**: note
 - **Relevant**: find_study_id=0
 
 ### study_scanned_qr_code
+
 - **Label**: 1.12. Scan study ID
 - **Type**: barcode
-- **Relevant**: has_study_id=1 and  find_study_id=null
+- **Relevant**: has_study_id=1 and find_study_id=null
 
 ### study_manual_qr_code
+
 - **Label**: 1.13. Manually enter Study ID:
 - **Type**: text
 - **Relevant**: (has_study_id=1 or find_study_id=1) and study_scanned_qr_code = null
 
 ### study_qr_code
+
 - **Label**: nan
 - **Type**: calculate
 - **Relevant**: has_study_id=1 or find_study_id=1
 - **Calculate**: if(study_scanned_qr_code=null, study_manual_qr_code, study_scanned_qr_code)
 
 ### s1_n4
+
 - **Label**: Interviewer ID (Q1.1) should not be the same as participant's study ID (Q1.12).
 - **Type**: note
-- **Relevant**: study_qr_code!=null and interviewer_qr_code!=null  and study_qr_code=interviewer_qr_code
+- **Relevant**: study_qr_code!=null and interviewer_qr_code!=null and study_qr_code=interviewer_qr_code
 
 ### participate_tda
+
 - **Label**: 1.14. Does this participant consent to participate in this TDA round?
 - **Type**: select_one yes_no
 - **Relevant**: age>=14 and (received_other_tda_rounds=1 or received_other_tda_rounds=2) and (has_study_id=1 or find_study_id=1)
@@ -268,6 +295,7 @@ Drug administration questionnaire
   - 0: No
 
 ### finish_all_medication
+
 - **Label**: 1.15. During the previous round, did you finish all of the medication as advised by the person who gave it to you?
 - **Type**: select_one yes_no_dr
 - **Relevant**: participate_tda=1
@@ -277,79 +305,90 @@ Drug administration questionnaire
   - 888: Doesn't remember / know
 
 ### why_not_finish_pills
+
 - **Label**: 1.15 a. Why did you not finish all the pills?
 - **Type**: select_multiple why_not_finish_pills
 - **Relevant**: finish_all_medication=0
 - **Choices**:
-  - 1: It was too many pills  
-  - 2: It made me ill  
-  - 3: I lost the remainder  
-  - 4: I shared it with others  
-  - 5: I was not sick to start with  
-  - 6: I felt better  
-  - 7: I forgot to take the rest  
-  - 8: I saved them for another time when I am ill  
-  - 9: I didn’t understand the instructions provided by the team  
-  - 10: I don’t believe in this medication  
-  - 11: I didn’t like the taste  
-  - 12: The pills were too big  
-  - 13: I heard negative rumors about the medication  
-  - 777: Other (specify)  
-  - 888: Don’t know  
+  - 1: It was too many pills
+  - 2: It made me ill
+  - 3: I lost the remainder
+  - 4: I shared it with others
+  - 5: I was not sick to start with
+  - 6: I felt better
+  - 7: I forgot to take the rest
+  - 8: I saved them for another time when I am ill
+  - 9: I didn’t understand the instructions provided by the team
+  - 10: I don’t believe in this medication
+  - 11: I didn’t like the taste
+  - 12: The pills were too big
+  - 13: I heard negative rumors about the medication
+  - 777: Other (specify)
+  - 888: Don’t know
 
 ### why_not_finish_pills_other
+
 - **Label**: Specify
 - **Type**: text
 - **Relevant**: selected(why_not_finish_pills,'777')
 
 ### blister_pack_available
-- **Label**: 1.15 b. Is the blister pack available? 
+
+- **Label**: 1.15 b. Is the blister pack available?
 - **Type**: select_one blister_pack_available
 - **Relevant**: finish_all_medication=1 or finish_all_medication=0
 - **Choices**:
-  - 1: Yes - Blister pack is available and has been given to the team 
-  - 2: No - but participant is able to self-report how many pills were taken 
-  - 3: No - and participant is unable to report how many pills were taken 
-  - 777: Other (specify) 
+  - 1: Yes - Blister pack is available and has been given to the team
+  - 2: No - but participant is able to self-report how many pills were taken
+  - 3: No - and participant is unable to report how many pills were taken
+  - 777: Other (specify)
 
 ### blister_pack_available_other
+
 - **Label**: Specify
 - **Type**: text
 - **Relevant**: blister_pack_available=777
 
 ### pills_taken
-- **Label**: 1.15 c. How many pills did you take? 
 
-(Count blister pack if available or ask the participant to self-report) 
+- **Label**: 1.15 c. How many pills did you take?
+
+(Count blister pack if available or ask the participant to self-report)
+
 - **Type**: integer
 - **Relevant**: blister_pack_available=1 or blister_pack_available=2 or blister_pack_available=777
 
 ### pills_remaining
-- **Label**: 1.15 d. How many pills are remaining on the blister pack? 
+
+- **Label**: 1.15 d. How many pills are remaining on the blister pack?
 - **Type**: integer
 - **Relevant**: blister_pack_available=1
 
 ### s1_n5
+
 - **Label**: Register participant in the Enrollment Registry
 - **Type**: note
 - **Relevant**: participate_tda=1
 
 ### s1_end_survey
+
 - **Label**: nan
 - **Type**: calculate
-- **Calculate**: if( round_of_tda=1 
-or
-(( round_of_tda=2 or round_of_tda=3) and received_other_tda_rounds=0)
-or
-((round_of_tda=2 or round_of_tda=3) and find_study_id=0 and participate_tda!=0),0,1)
+- **Calculate**: if( round_of_tda=1
+  or
+  (( round_of_tda=2 or round_of_tda=3) and received_other_tda_rounds=0)
+  or
+  ((round_of_tda=2 or round_of_tda=3) and find_study_id=0 and participate_tda!=0),0,1)
 
 ### s1_n6
+
 - **Label**: INFORMED CONSENT
-Read the information sheet and obtain consent from the participant and make sure they understand the information. The participant needs to sign TWO paper copies of the informed consent, one will be given to him/her and the other one will be kept for study records.
+  Read the information sheet and obtain consent from the participant and make sure they understand the information. The participant needs to sign TWO paper copies of the informed consent, one will be given to him/her and the other one will be kept for study records.
 - **Type**: note
 - **Relevant**: s1_end_survey=0
 
 ### consent_to_participate_today
+
 - **Label**: 1.16. Has the participant provided consent to participate today?
 - **Type**: select_one yes_no
 - **Relevant**: age>=18 and s1_end_survey=0
@@ -358,6 +397,7 @@ Read the information sheet and obtain consent from the participant and make sure
   - 0: No
 
 ### guardian_at_farm
+
 - **Label**: 1.17. Is a parent or guardian at the farm and able to provide informed consent for the participant?
 - **Type**: select_one yes_no
 - **Relevant**: age>=14 and age<18 and s1_end_survey=0
@@ -366,6 +406,7 @@ Read the information sheet and obtain consent from the participant and make sure
   - 0: No
 
 ### assent_to_participate_today
+
 - **Label**: 1.18. Has the participant provided assent to participate today?
 - **Type**: select_one yes_no
 - **Relevant**: guardian_at_farm=1
@@ -374,6 +415,7 @@ Read the information sheet and obtain consent from the participant and make sure
   - 0: No
 
 ### consent_to_minor
+
 - **Label**: 1.19. Has the parent/legal guardian provided consent for the minor to participate today?
 - **Type**: select_one yes_no
 - **Relevant**: assent_to_participate_today=1
@@ -388,16 +430,19 @@ Read the information sheet and obtain consent from the participant and make sure
 - **Relevant**: consent_to_participate_today=1 or consent_to_minor=1 or participate_tda=1
 
 ### first_name
+
 - **Label**: First name
 - **Type**: text
 
 ### father_name
+
 - **Label**: Father's name
 - **Type**: text
 
 </details>
 
 ### got_id_in_baseline_survey
+
 - **Label**: 1.20. Did you participate in the Baseline Survey and got a Study ID card?
 - **Type**: select_one yes_no
 - **Relevant**: (round_of_tda=1 or ((round_of_tda=2 or round_of_tda=3) and received_other_tda_rounds=0)) and (consent_to_minor=1 or consent_to_participate_today=1)
@@ -406,60 +451,69 @@ Read the information sheet and obtain consent from the participant and make sure
   - 0: No
 
 ### scan_id
+
 - **Label**: nan
 - **Type**: calculate
 - **Relevant**: (round_of_tda=1 and (consent_to_participate_today=1 or consent_to_minor=1) and got_id_in_baseline_survey=1)
-or
-((round_of_tda=2 or round_of_tda=3) and received_other_tda_rounds=0 and (consent_to_participate_today=1 or consent_to_minor=1) and got_id_in_baseline_survey=1)
+  or
+  ((round_of_tda=2 or round_of_tda=3) and received_other_tda_rounds=0 and (consent_to_participate_today=1 or consent_to_minor=1) and got_id_in_baseline_survey=1)
 - **Calculate**: 1
 
 ### assign_id
+
 - **Label**: nan
 - **Type**: calculate
 - **Relevant**: (round_of_tda=1 and (consent_to_participate_today=1 or consent_to_minor=1) and got_id_in_baseline_survey=0)  
-or 
-((round_of_tda=2 or round_of_tda=3) and received_other_tda_rounds=0 and (consent_to_participate_today=1 or consent_to_minor=1) and got_id_in_baseline_survey=0)
+  or
+  ((round_of_tda=2 or round_of_tda=3) and received_other_tda_rounds=0 and (consent_to_participate_today=1 or consent_to_minor=1) and got_id_in_baseline_survey=0)
 - **Calculate**: 1
 
 ### assign_id_r
+
 - **Label**: nan
 - **Type**: calculate
-- **Relevant**: (round_of_tda=2 or round_of_tda=3) and  (received_other_tda_rounds=1 or received_other_tda_rounds=2) and  (has_study_id=0 or has_study_id=2) and find_study_id=0 and (consent_to_participate_today=1 or consent_to_minor=1)
+- **Relevant**: (round_of_tda=2 or round_of_tda=3) and (received_other_tda_rounds=1 or received_other_tda_rounds=2) and (has_study_id=0 or has_study_id=2) and find_study_id=0 and (consent_to_participate_today=1 or consent_to_minor=1)
 - **Calculate**: 1
 
 ### s1_n7
+
 - **Label**: Make sure you label Enrollment registry with the same QR and write down the participant’s study ID on the Informed consent.
 - **Type**: note
 - **Relevant**: scan_id=1
 
-
 ### s1_n8
+
 - **Label**: Assign participant a Study ID and scan it. Then, label Enrollment registry with the same QR code and write down the participant’s study ID on the Informed consent.
 - **Type**: note
 - **Relevant**: assign_id=1
 
 ### study_bl_scanned_qr_code
+
 - **Label**: 1.21. Scan study ID
 - **Type**: barcode
 - **Relevant**: scan_id=1 or assign_id=1 or assign_id_r=1
 
 ### study_bl_manual_qr_code
+
 - **Label**: 1.22. Manually enter Study ID:
 - **Type**: text
 - **Relevant**: (scan_id=1 or assign_id=1 or assign_id_r=1) and study_bl_scanned_qr_code = null
 
 ### study_bl_qr_code
+
 - **Label**: nan
 - **Type**: calculate
 - **Relevant**: scan_id=1 or assign_id=1 or assign_id_r=1
 - **Calculate**: if(study_bl_scanned_qr_code=null, study_bl_manual_qr_code, study_bl_scanned_qr_code)
 
 ### s1_n9
+
 - **Label**: Interviewer ID (Q1.1) should not be the same as participant's study ID (Q1.23).
 - **Type**: note
-- **Relevant**: study_bl_qr_code!=null and interviewer_qr_code!=null  and study_bl_qr_code=interviewer_qr_code
+- **Relevant**: study_bl_qr_code!=null and interviewer_qr_code!=null and study_bl_qr_code=interviewer_qr_code
 
 ### labeled_enrollment_registry_qr
+
 - **Label**: 1.23. Did you fill out and label the Enrollment Registry with the participant’s Study ID QR?
 - **Type**: select_one yes_no
 - **Relevant**: scan_id=1 or assign_id=1 or assign_id_r=1
@@ -468,6 +522,7 @@ or
   - 0: No
 
 ### write_study_id_informed_consent
+
 - **Label**: 1.24. Did you write down the participant Study ID at the top of the Informed Consent?
 - **Type**: select_one yes_no
 - **Relevant**: scan_id=1 or assign_id=1 or assign_id_r=1
@@ -484,7 +539,8 @@ or
 - **Relevant**: participate_tda=1 or consent_to_participate_today=1 or consent_to_minor=1
 
 ### treated_in_baseline_survey
-- **Label**: 2.1. Was this participant already treated in the Baseline survey? 
+
+- **Label**: 2.1. Was this participant already treated in the Baseline survey?
 - **Type**: select_one yes_no
 - **Relevant**: round_of_tda=1 and got_id_in_baseline_survey=1
 - **Choices**:
@@ -492,11 +548,13 @@ or
   - 0: No
 
 ### s2_end_survey_2_1
+
 - **Label**: nan
 - **Type**: calculate
 - **Calculate**: if(round_of_tda=1 and treated_in_baseline_survey=1,1,0)
 
 ### eligible_for_medication
+
 - **Label**: 2.2. Is the participant eligible to receive the medication?
 - **Type**: select_one yes_no
 - **Relevant**: s2_end_survey_2_1=0
@@ -505,25 +563,28 @@ or
   - 0: No
 
 ### s2n1
+
 - **Label**: Check all contra-indications before proceeding:
-- Has received anti-malarial in the last 2 weeks 
-- Taking concomitant contra-indicated medication 
-- Severe illness 
-- History of cardiac rhythm disturbances, bradycardia, or heart failure 
-- Allergy to DP component or other artemisinin derivative 
+- Has received anti-malarial in the last 2 weeks
+- Taking concomitant contra-indicated medication
+- Severe illness
+- History of cardiac rhythm disturbances, bradycardia, or heart failure
+- Allergy to DP component or other artemisinin derivative
 - Pregnancy
 - **Type**: note
 - **Relevant**: eligible_for_medication=1
 
 ### reason
+
 - **Label**: 2.3. If no, specify reason
 - **Type**: select_one reason
 - **Relevant**: eligible_for_medication=0
 - **Choices**:
   - 1: Refuses to take it (withdrew consent)
-  - 2: Has contra-indications  
+  - 2: Has contra-indications
 
 ### contraindications
+
 - **Label**: 2.4. Indicate the contraindication(s)
 - **Type**: select_multiple contraindications
 - **Relevant**: reason=2
@@ -533,31 +594,36 @@ or
   - 3: Severe illness
   - 4: History of cardiac rhythm disturbances, bradycardia, or heart failure
   - 5: Allergy to DP component or other artemisinin derivatives
-  - 6: Pregnancy 
+  - 6: Pregnancy
 
 ### treat_with_dp
+
 - **Label**: nan
 - **Type**: calculate
 - **Relevant**: eligible_for_medication=1 and gender=1
 - **Calculate**: if(eligible_for_medication=1 and gender=1,1,0)
 
 ### s2n2
+
 - **Label**: 2.5. Treat participant with DP
 - **Type**: note
 - **Relevant**: treat_with_dp=1
 
 ### treat_with_al
+
 - **Label**: nan
 - **Type**: calculate
 - **Relevant**: eligible_for_medication=1 and gender=2
 - **Calculate**: if(eligible_for_medication=1 and gender=2,1,0)
 
 ### s2n3
+
 - **Label**: 2.6. Treat participant with AL
 - **Type**: note
 - **Relevant**: treat_with_al=1
 
 ### received_medication
+
 - **Label**: 2.7. Has the participant received the medication?
 - **Type**: select_one yes_no
 - **Relevant**: treat_with_dp=1 or treat_with_al=1
@@ -566,7 +632,8 @@ or
   - 0: No
 
 ### observed_dose_1
-- **Label**: 2.8. Was   dose #1 directly observed?
+
+- **Label**: 2.8. Was dose #1 directly observed?
 - **Type**: select_one yes_no
 - **Relevant**: received_medication=1
 - **Choices**:
@@ -582,10 +649,12 @@ or
 - **Relevant**: received_medication=1 and (round_of_tda=2 or round_of_tda=3)
 
 ### recent_arrival_date
+
 - **Label**: 3.1. Date of most recent arrival at this farm
 - **Type**: date
 
 ### worked_at_other_farms
+
 - **Label**: 3.2. Have you worked at other farms between July and now?
 - **Type**: select_one yes_no
 - **Choices**:
@@ -593,7 +662,8 @@ or
   - 0: No
 
 ### farms_worked_july_now
-- **Label**: 3.3. In how many other farms have you worked between July and now? 
+
+- **Label**: 3.3. In how many other farms have you worked between July and now?
 - **Type**: integer
 - **Relevant**: round_of_tda=3 and worked_at_other_farms=1
 
@@ -604,11 +674,13 @@ or
 - **Relevant**: farms_worked_july_now>0
 
 ### pos
+
 - **Label**: nan
 - **Type**: calculate
 - **Calculate**: position(..)
 
 ### which_farm
+
 - **Label**: 3.4. Which farm?
 - **Type**: select_one farm_camp
 - **Relevant**: pos<=farms_worked_july_now
@@ -636,7 +708,7 @@ or
   - 21: Ayelign Habtie (Block 26) - (Fikiremichael Ayelign)
   - 22000: Ayelign Habtie (Block29) - (Ayelign Habtie)
   - 23000: Ayelign Yenehun - (Ayelign Yenehun)
-  - 24: Ayenachew Sisay - (Adane  Ayalew)
+  - 24: Ayenachew Sisay - (Adane Ayalew)
   - 25: Ayenew Bazezew - (Habetamu Gidey)
   - 26: Ayineshet Worku - (Eyayaw Getawn)
   - 27000: Bata Trading
@@ -666,7 +738,7 @@ or
   - 51000: Gebremedhin Tesfaye - (Yerega)
   - 52: Geger Agri. Develop. - (Melkamu kasegen)
   - 53: Getachew Tezera - (Negash Zenaw)
-  - 54: Getiye Gebru - (Mesfin Abeje  Atanaw)
+  - 54: Getiye Gebru - (Mesfin Abeje Atanaw)
   - 55: Guadie Alem - (Moges Guadie)
   - 56000: Habtamu Get - (Habtamu)
   - 57000: Habtamu Woretaw - (Habtamu)
@@ -685,7 +757,7 @@ or
   - 69: Mastewal Mazengia (Hectares 37.5) - (Kiflie Mazengia)
   - 68000: Mastewal Mazengia (Hectares51) - (Mastewal Mazengia)
   - 72: Mekonnen Goshe - (Mandie Teketayi)
-  - 73: Mekuanint Kassie - (Dejen  Worku)
+  - 73: Mekuanint Kassie - (Dejen Worku)
   - 74: Melaku Dires - (Nigus. Dejen)
   - 75000: Melikie and Enana
   - 76: Melkie Taddesse - (Ayanaw Alebel)
@@ -719,17 +791,20 @@ or
   - 58000: Zenaw Wagaw - (Zenaw Wagaw)
 
 ### farm_camp_name_other
+
 - **Label**: Specify:
 - **Type**: text
 - **Relevant**: which_farm=777000
 
 ### farm_camp_name
+
 - **Label**: nan
 - **Type**: calculate
 - **Relevant**: pos<=farms_worked_july_now
 - **Calculate**: if(which_farm = 777000, farm_camp_name_other, jr:choice-name(which_farm,'which_farm'))
 
 ### work_months_farm
+
 - **Label**: 3.5. When did you work at ${farm_camp_name}
 - **Type**: select_one work_months_farm
 - **Relevant**: pos<=farms_worked_july_now
@@ -740,6 +815,7 @@ or
   - 4: October
 
 ### farms_visited_note_1
+
 - **Label**: Data collection for farm ${farm_camp_name} completed
 - **Type**: note
 - **Relevant**: pos<=farms_worked_july_now
@@ -747,6 +823,7 @@ or
 </details>
 
 ### main_residence_metema
+
 - **Label**: 3.6. Is your main place of residence (i.e., where you maintain a household and live most of the year) in this district (Metema)?
 - **Type**: select_one yes_no
 - **Choices**:
@@ -754,9 +831,11 @@ or
   - 0: No
 
 ### main_residence_country
+
 - **Label**: 3.7. If this district (Metema) is not your main place of residence, where is your main residence?
 
 Country:
+
 - **Type**: select_one country
 - **Relevant**: main_residence_metema=0
 - **Choices**:
@@ -770,14 +849,17 @@ Country:
   - 777: Other (specify)
 
 ### main_residence_country_specify
+
 - **Label**: Specify:
 - **Type**: text
 - **Relevant**: main_residence_country=777
 
 ### main_residence_region
+
 - **Label**: 3.7. If this district (Metema) is not your main place of residence, where is your main residence?
 
 Region:
+
 - **Type**: select_one region
 - **Relevant**: main_residence_metema=0
 - **Choices**:
@@ -825,7 +907,7 @@ Region:
   - 42: Sanaag
   - 43: Sool
   - 44: Togdheer
-  - 45: Khartoum 
+  - 45: Khartoum
   - 46: North Kordofan
   - 47: Northern
   - 48: Kassala
@@ -846,7 +928,7 @@ Region:
   - 63: Bahr el Ghazal
   - 64: Equatoria
   - 65: Greater Upper Nile
-  - 66: Nairobi 
+  - 66: Nairobi
   - 67: Central
   - 68: Coast
   - 69: Eastern
@@ -857,14 +939,17 @@ Region:
   - 777: Other (Specify)
 
 ### main_residence_region_specify
+
 - **Label**: Specify:
 - **Type**: text
 - **Relevant**: main_residence_region=777
 
 ### main_residence_zone
+
 - **Label**: 3.7. If this district (Metema) is not your main place of residence, where is your main residence?
 
 Zone:
+
 - **Type**: select_one zone
 - **Relevant**: main_residence_country=1 and main_residence_region!=777
 - **Choices**:
@@ -963,9 +1048,11 @@ Zone:
   - 777: Other (Specify)
 
 ### main_residence_woreda
+
 - **Label**: 3.7. If this district (Metema) is not your main place of residence, where is your main residence?
 
 District (Woreda):
+
 - **Type**: select_one woreda
 - **Relevant**: main_residence_country=1 and main_residence_region<777
 - **Choices**:
@@ -2054,45 +2141,53 @@ District (Woreda):
   - 7777: Other (Specify)
 
 ### main_residence_district_specify
+
 - **Label**: 3.7. If this district (Metema) is not your main place of residence, where is your main residence?
 
 District:
+
 - **Type**: text
 - **Relevant**: main_residence_country>1 or main_residence_region=777 or main_residence_woreda=7777
 
 ### main_residence_village
+
 - **Label**: 3.7. If this district (Metema) is not your main place of residence, where is your main residence?
 
 Village (Kebele):
+
 - **Type**: text
 - **Relevant**: main_residence_metema=0
 
 ### return_month
-- **Label**: 3.8. What month are you planning to return home to Gondar Zuria, East Dembia, Belesa or Ebenet? 
+
+- **Label**: 3.8. What month are you planning to return home to Gondar Zuria, East Dembia, Belesa or Ebenet?
 - **Type**: select_multiple return_month
 - **Relevant**: main_residence_woreda=327 or main_residence_woreda=328 or main_residence_woreda=331 or main_residence_woreda=332 or main_residence_woreda=136 or main_residence_woreda=152
 - **Choices**:
-  - 1: October 
-  - 2: November 
-  - 3: December 
-  - 4: January 2025 
+  - 1: October
+  - 2: November
+  - 3: December
+  - 4: January 2025
   - 5: February 2025
-  - 6: Not returning to Gondar Zuria, East Dembia, Belesa or Ebenet  
-  - 7: Not yet decided  
-  - 777: Other (specify) 
+  - 6: Not returning to Gondar Zuria, East Dembia, Belesa or Ebenet
+  - 7: Not yet decided
+  - 777: Other (specify)
 
 ### return_month_specify
+
 - **Label**: Specify:
 - **Type**: text
 - **Relevant**: selected(return_month,'777')
 
 ### residence_location_kebele
+
 - **Label**: 3.9. Where exactly is your place of residence in Gondar Zuria, East Dembia, Belesa or Ebenet?
 - **Type**: text
 - **Relevant**: selected(return_month,'1') or selected(return_month,'2') or selected(return_month,'3') or selected(return_month,'4') or selected(return_month,'5') or selected(return_month,'777')
 
 ### followup_residence_health
-- **Label**: 3.10. Would you be willing to participate in a follow up visit once you are back in your place of residence to check your health and malaria status? 
+
+- **Label**: 3.10. Would you be willing to participate in a follow up visit once you are back in your place of residence to check your health and malaria status?
 - **Type**: select_one yes_no
 - **Relevant**: selected(return_month,'1') or selected(return_month,'2') or selected(return_month,'3') or selected(return_month,'4') or selected(return_month,'5') or selected(return_month,'777')
 - **Choices**:
@@ -2100,24 +2195,28 @@ Village (Kebele):
   - 0: No
 
 ### contact_number_for_visit
-- **Label**: 3.11. Could you provide us with your contact number so we can contact you to plan the visit? 
+
+- **Label**: 3.11. Could you provide us with your contact number so we can contact you to plan the visit?
 - **Type**: text
 - **Relevant**: followup_residence_health=1
 
 </details>
 
 ### note_eligible
+
 - **Label**: This participant is not eligible for drug administrattion
 - **Type**: note
 - **Relevant**: (consent_to_participate_today=0 or consent_to_minor=0 or participate_tda=0 or guardian_at_farm=0 or assent_to_participate_today=0)
-or
-eligible_for_medication=0
+  or
+  eligible_for_medication=0
 
 ### interviewer_comments
-- **Label**: Any comments?  
+
+- **Label**: Any comments?
 - **Type**: text
 
 ### study_qr_4_instance_name
+
 - **Label**: nan
 - **Type**: calculate
 - **Calculate**: if(study_bl_qr_code=null,study_qr_code,study_bl_qr_code)
