@@ -27,7 +27,7 @@
   Highlands follow up study questionnaire
 - **Type**: note
 
-<details>
+<details open>
 <summary><h2>Section 1:  Identification of interviewer and location (group)</h2></summary>
 
 - **Type**: begin group
@@ -317,7 +317,7 @@
 
 </details>
 
-<details>
+<details open>
 <summary><h2>Section 2: Participant’s eligibility and consent  (group)</h2></summary>
 
 - **Type**: begin group
@@ -420,7 +420,7 @@ Please thank them for their time and end the interview.
 - **Relevant**: s2_end_survey=0 and (consent_to_participate_today=1 or consent_to_minor=1)
 - **Calculate**: if(s2_end_survey=1 or consent_to_participate_today=0 or assent_to_participate_today=0 or consent_to_minor=0,1,0)
 
-<details>
+<details open>
 <summary><h2>Participant's name (group)</h2></summary>
 
 - **Type**: begin group
@@ -607,7 +607,7 @@ Scan the QR code from the back of the DBS card
 
 </details>
 
-<details>
+<details open>
 <summary><h2>Section 3:  Identification of farm and travel  (group)</h2></summary>
 
 - **Type**: begin group
@@ -1031,7 +1031,7 @@ Scan the QR code from the back of the DBS card
 
 </details>
 
-<details>
+<details open>
 <summary><h2>Section 4: Living at the farm and malaria prevention  (group)</h2></summary>
 
 - **Type**: begin group
@@ -1080,7 +1080,7 @@ Scan the QR code from the back of the DBS card
 
 </details>
 
-<details>
+<details open>
 <summary><h2>Section 5. History of fever and treatment seeking  (group)</h2></summary>
 
 - **Type**: begin group
@@ -1203,7 +1203,7 @@ Scan the QR code from the back of the DBS card
 
 </details>
 
-<details>
+<details open>
 <summary><h2>Section 6. Targeted drug administration  (group)</h2></summary>
 
 - **Type**: begin group
@@ -1312,7 +1312,7 @@ Provide information for the most recent round
 
 </details>
 
-<details>
+<details open>
 <summary><h2>Section 7. Sample collection  (group)</h2></summary>
 
 - **Type**: begin group
