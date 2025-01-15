@@ -27,7 +27,7 @@
   Drug administration questionnaire
 - **Type**: note
 
-<details>
+<details open>
 <summary><h2>Section 1:  Identification of participant and farm (group)</h2></summary>
 
 - **Type**: begin group
@@ -227,7 +227,7 @@
   - 1: Yes
   - 2: Yes, but he/she lost it
 
-<details>
+<details open>
 <summary><h2>Check (group)</h2></summary>
 
 - **Type**: begin group
@@ -423,7 +423,7 @@
   - 1: Yes
   - 0: No
 
-<details>
+<details open>
 <summary><h2>Participant's name (group)</h2></summary>
 
 - **Type**: begin group
@@ -532,7 +532,7 @@
 
 </details>
 
-<details>
+<details open>
 <summary><h2>Section 2:  Drug administration (group)</h2></summary>
 
 - **Type**: begin group
@@ -642,7 +642,7 @@
 
 </details>
 
-<details>
+<details open>
 <summary><h2>Section 3:  Travel (group)</h2></summary>
 
 - **Type**: begin group
@@ -667,7 +667,7 @@
 - **Type**: integer
 - **Relevant**: round_of_tda=3 and worked_at_other_farms=1
 
-<details>
+<details open>
 <summary><h2>Farms visited (repeat)</h2></summary>
 
 - **Type**: begin repeat
