@@ -27,7 +27,7 @@
   Individual survey questionnaire
 - **Type**: note
 
-<details>
+<details open>
 <summary><h2>Section 1: Identification of interviewer and farm (group)</h2></summary>
 
 - **Type**: begin group
@@ -200,7 +200,7 @@
 
 </details>
 
-<details>
+<details open>
 <summary><h2>Section 2: Participant’s eligibility and consent (group)</h2></summary>
 
 - **Type**: begin group
@@ -481,7 +481,7 @@ Please thank them for their time and end the interview.
   - 0: No
   - 2: Yes, but he / she lost it
 
-<details>
+<details open>
 <summary><h2>Retrieve Study ID (group)</h2></summary>
 
 - **Type**: begin group
@@ -508,7 +508,7 @@ Please thank them for their time and end the interview.
   - 1: Yes
   - 0: No
 
-<details>
+<details open>
 <summary><h2>Participant's Study ID (group)</h2></summary>
 
 - **Type**: begin group
@@ -577,7 +577,7 @@ Please thank them for their time and end the interview.
 - **Type**: integer
 - **Relevant**: other_farms_july_to_now=1
 
-<details>
+<details open>
 <summary><h2>Farms visited (repeat)</h2></summary>
 
 - **Type**: begin repeat
@@ -735,7 +735,7 @@ Please thank them for their time and end the interview.
 
 </details>
 
-<details>
+<details open>
 <summary><h2>Section 3:  Sociodemographic (group)</h2></summary>
 
 - **Type**: begin group
@@ -2226,7 +2226,7 @@ Village (Kebele):
 
 </details>
 
-<details>
+<details open>
 <summary><h2>Section 4:  Living at the farm and malaria prevention (group)</h2></summary>
 
 - **Type**: begin group
@@ -2347,7 +2347,7 @@ I’m going to ask you some questions about where do you sleep in this farm and 
 
 </details>
 
-<details>
+<details open>
 <summary><h2>Section 5:  Occupational travel, worksite conditions and malaria risk (group)</h2></summary>
 
 - **Type**: begin group
@@ -2803,7 +2803,7 @@ Thank you for your answers. Now I would like to ask you some questions about you
 
 </details>
 
-<details>
+<details open>
 <summary><h2>Section 6:  Malaria knowledge attitude practice (KAP) (group)</h2></summary>
 
 - **Type**: begin group
@@ -2997,7 +2997,7 @@ Thank you for your answers. Now I would like to ask you some questions about you
 
 </details>
 
-<details>
+<details open>
 <summary><h2>Section 7:  History of fever and treatment seeking (group)</h2></summary>
 
 - **Type**: begin group
@@ -3206,7 +3206,7 @@ Thank you for your answers. Now I would like to ask you some questions about you
 
 </details>
 
-<details>
+<details open>
 <summary><h2>Section 8:  Targeted drug administration (group)</h2></summary>
 
 - **Type**: begin group
@@ -3450,7 +3450,7 @@ Provide information for the most recent time you received antimalarials as part 
 - **Type**: integer
 - **Relevant**: adverse_events=1
 
-<details>
+<details open>
 <summary><h2>Adverse events (repeat)</h2></summary>
 
 - **Type**: begin repeat
@@ -3603,7 +3603,7 @@ Provide information for the most recent time you received antimalarials as part 
 
 </details>
 
-<details>
+<details open>
 <summary><h2>Section 9:  Sample collection  (group)</h2></summary>
 
 - **Type**: begin group
