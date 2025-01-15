@@ -27,7 +27,7 @@
   Enhanced case management questionnaire
 - **Type**: note
 
-<details>
+<details open>
 <summary><h2>Section 1:  Identification of participant and farm (group)</h2></summary>
 
 - **Type**: begin group
@@ -411,7 +411,7 @@
 
 </details>
 
-<details>
+<details open>
 <summary><h2>Section 2:  Fever and malaria (group)</h2></summary>
 
 - **Type**: begin group
@@ -536,7 +536,7 @@
 
 </details>
 
-<details>
+<details open>
 <summary><h2>Section 3:  Other illnesses or medical complaints  (group)</h2></summary>
 
 - **Type**: begin group
